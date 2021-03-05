@@ -1,30 +1,19 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Rotas DF
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 02
+**Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 16/0022673  |  Ailamar Alves Guimarães |
+| 17/0080307  |  Matheus Amaral Moreira |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+
+Nesse projeto a dupla busca criar uma aplicação utilizando os métodos de melhor caminho adquiridos nas aulas, partindo de algo bem conhecido do dia-a-dia das pessoas que são os apps de serviço de pesquisa de mapas e rotas. Nossa aplicação consiste em retornar ao usuário o melhor caminho entre uma região administrativa e outra em relação à distância e tempo reais* para se chegar ao destino final.
+
+*A quilometragem e tempo utilizada nos pesos foram estraídos de buscas no Google Maps.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
