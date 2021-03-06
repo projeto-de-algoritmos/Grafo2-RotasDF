@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotas DF</title>
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="">
+    <header>
+        <h1>Para onde você deseja ir?</h1>
+    </header>
+    <section>
+        <div id="res">
+            Nosso app de rotas permite mostrar quais são as cidades percorridas
+            para chegar de um destino ao outro. Faça sua pesquisa. <br><br>
+            Preencha os dados abaixo para obter o caminho:
+        </div> 
+        <div>
+            <p style="font-size: medium;"> 
+                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                De: 
+                <select id="origem" autofocus>
+                    <option value=""></option>
+                    <option value="Águas Claras">Águas Claras</option>
+                    <option value="Arniqueiras">Arniqueiras</option>
+                    <option value="Asa Norte">Asa Norte</option>
+                    <option value="Asa Sul">Asa Sul</option>
+                    <option value="Brazlândia">Brazlândia</option>
+                    <option value="Candangolândia">Candangolândia</option>
+                    <option value="Ceilândia">Ceilândia</option>
+                    <option value="Cruzeiro Novo">Cruzeiro Novo</option>
+                    <option value="Eixo Monumental">Eixo Monumental</option>
+                    <option value="Fercal">Fercal</option>
+                    <option value="Gama">Gama</option>
+                    <option value="Guará">Guará</option>
+                    <option value="Jardim Botanico">Jardim Botânico</option>
+                    <option value="Lago Sul">Lago Sul</option>
+                    <option value="Núcleo Bandeirante">Núcleo Bandeirante</option>
+                    <option value="Paranoá">Paranoá</option>
+                    <option value="Park Way">Park Way</option>
+                    <option value="Planaltina">Planaltina</option>
+                    <option value="Riacho Fundo I">Riacho Fundo I</option>
+                    <option value="Riacho Fundo II">Riacho Fundo II</option>
+                    <option value="Recanto das Emas">Recanto das Emas</option>
+                    <option value="Samambaia">Samambaia</option>
+                    <option value="Santa Maria">Santa Maria</option>
+                    <option value="São Sebastião">São Sebastião</option>
+                    <option value="SIA">SIA</option>
+                    <option value="Sobradinho">Sobradinho</option>  
+                    <option value="Sol Nascente">Sol Nascente</option>
+                    <option value="Sudoeste">Sudoeste</option>
+                    <option value="Taguatinga">Taguatinga</option>
+                    <option value="Vicente Pires">Vicente Pires</option>
+                    <option value="Varjão">Varjão</option>
+                </select>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>  
+                Para:
+                <select id="destino">
+                    <option value=""></option>
+                    <option value="Águas Claras">Águas Claras</option>
+                    <option value="Arniqueiras">Arniqueiras</option>
+                    <option value="Asa Norte">Asa Norte</option>
+                    <option value="Asa Sul">Asa Sul</option>
+                    <option value="Brazlândia">Brazlândia</option>
+                    <option value="Candangolândia">Candangolândia</option>
+                    <option value="Ceilândia">Ceilândia</option>
+                    <option value="Cruzeiro Novo">Cruzeiro Novo</option>
+                    <option value="Eixo Monumental">Eixo Monumental</option>
+                    <option value="Fercal">Fercal</option>
+                    <option value="Gama">Gama</option>
+                    <option value="Guará">Guará</option>
+                    <option value="Jardim Botanico">Jardim Botânico</option>
+                    <option value="Lago Sul">Lago Sul</option>
+                    <option value="Núcleo Bandeirante">Núcleo Bandeirante</option>
+                    <option value="Paranoá">Paranoá</option>
+                    <option value="Park Way">Park Way</option>
+                    <option value="Planaltina">Planaltina</option>
+                    <option value="Riacho Fundo I">Riacho Fundo I</option>
+                    <option value="Riacho Fundo II">Riacho Fundo II</option>
+                    <option value="Recanto das Emas">Recanto das Emas</option>
+                    <option value="Samambaia">Samambaia</option>
+                    <option value="Santa Maria">Santa Maria</option>
+                    <option value="São Sebastião">São Sebastião</option>
+                    <option value="SIA">SIA</option>
+                    <option value="Sobradinho">Sobradinho</option>  
+                    <option value="Sol Nascente">Sol Nascente</option>
+                    <option value="Sudoeste">Sudoeste</option>
+                    <option value="Taguatinga">Taguatinga</option>
+                    <option value="Vicente Pires">Vicente Pires</option>
+                    <option value="Varjão">Varjão</option>
+                </select>
+                <br>
+                <BR></BR>
+                <button id="searchBtn">Pesquisar</button>
+            </p> 
+            <div id="rotaPesquisada"></div> <!-- print do grafo -->
+        </div>    
+    </section>
+    <footer>
+        <p>&copy; Ailamar Alves & Matheus Amaral</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

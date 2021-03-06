@@ -1,0 +1,23 @@
+{
+  "name": "grafos2-rotasdf",
+  "version": "1.0.0",
+  "description": "**Número da Lista**: 02\r **Conteúdo da Disciplina**: Grafos 2<br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projeto-de-algoritmos/Grafos2-RotasDF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projeto-de-algoritmos/Grafos2-RotasDF/issues"
+  },
+  "homepage": "https://github.com/projeto-de-algoritmos/Grafos2-RotasDF#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

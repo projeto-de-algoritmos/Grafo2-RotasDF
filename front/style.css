@@ -1,0 +1,78 @@
+body {
+    /*background: rgba(134, 186, 235, 0.774);*/
+    background-image: url('assets/img/maps.jpg');
+    background-size: cover;
+    font: normal 14pt serif;
+    color: rgb(7, 7, 7);
+}
+
+header {
+    text-align: center;
+    color: rgb(28, 28, 28);
+}
+
+h1 {
+    color: bisque;
+    text-shadow: 2px 0 0 #000;
+}
+
+h5 {
+    color: bisque;
+    padding: 8px;
+    background-color: darkslategrey;
+    box-shadow: 5px 5px 10px rgba(87, 86, 76, 0.493);
+    border-radius: 5px;
+    width: 160px;
+    font-weight: lighter;
+}
+
+button {
+    color: rgb(28, 28, 28);
+    font: bold 11pt serif;
+    background-color: bisque;
+    padding: 5px;
+    border-color: darkgray;
+    box-shadow: 5px 5px 10px rgba(87, 86, 76, 0.493);
+    border-radius: 5px;
+    width: 100px;
+}
+
+select {
+    font: bold 11pt serif;
+    margin-right: 35px;
+    color: bisque;
+    padding: 8px;
+    background-color: darkslategrey;
+    box-shadow: 5px 5px 10px rgba(87, 86, 76, 0.493);
+    border-radius: 5px;
+    width: 160px;
+}
+
+img {
+    position: absolute;
+    align-items: right;
+}
+
+canvas {
+    position: absolute;
+}
+
+section {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    width: 700px;
+    height: 900px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(87, 86, 76, 0.493);
+}
+
+div {
+    padding: 5px;
+}
+
+footer {
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+}
