@@ -15,10 +15,10 @@ app.use((req, res, next) =>{
     next();
 });
 
-app.post('/', (req, res) => {
-    const {origem, destino} = req.body;
+// app.post('/', (req, res) => {
+//     const {origem, destino} = req.body;
 
-    if(req.body) {
+//     if(req.body) {
 
         const graph = new Graph();
 
@@ -29,12 +29,15 @@ app.post('/', (req, res) => {
             graph.addEdge(route[0], route[1], route[2]);
         });
 
-        return res.json({caminho : answer});
+        dijkstra(graph, 'Taguatinga', 'Sobradinho');
+        return;
+
+//         return res.json({caminho : answer});
     
-    } else {
-        console.log("deu ruim");
-        return res.send(500);
-    }
-});
+//     } else {
+//         console.log("deu ruim");
+//         return res.send(500);
+//     }
+// });
 
 app.listen(8000, () => console.log(""));
