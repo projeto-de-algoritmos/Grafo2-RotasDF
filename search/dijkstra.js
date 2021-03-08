@@ -24,12 +24,16 @@ function pathFinder(distances, start, end) {
       return;
     }
   });
+
+  if(next === start) return path;
+  
   let actual = end;
   while (actual !== start) {
     actual = next;
     distances.forEach((x) => {
+
       if(x._to === actual) {
-        path.unshift({ city : x._to, weight : x._weight });
+      path.unshift({ city : x._to, weight : x._weight });
         next = x._from;
         return;
       }
@@ -102,6 +106,7 @@ function dijkstra(graph, start, end) {
     [candidates[0], candidates[position]] = [candidates[position], candidates[0]];
     const candidate = Dequeue(candidates);
     
+
     distances.setDistance(candidate);
     actualCity = candidate._to;    
     actualWeight = candidate._weight;
