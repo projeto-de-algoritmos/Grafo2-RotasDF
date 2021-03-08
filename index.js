@@ -31,14 +31,15 @@ app.post('/', (req, res) => {
         });
 
         const path = dijkstra(graph, origem, destino);
-        console.log(path);
         answerPath = [];
-        answerDistance = path[path.length-1].weight._distance;
-        answerTime = path[path.length-1].weight._time;
         path.forEach((x) => {
             answerPath.push(x.city);
+            x.weight._distance = Math.round(x.weight._distance * 10) / 10;
         });
+        answerTime = path[path.length-1].weight._time;
+        answerDistance = path[path.length-1].weight._distance;
 
+        console.log(path);
 
         return res.json({ path : answerPath, distance : answerDistance, time : answerTime });
     
