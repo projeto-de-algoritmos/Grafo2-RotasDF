@@ -75,7 +75,7 @@ function dijkstra(graph, start, end) {
         {
           let weight = {};
           weight._distance = edge._weight._distance + actualWeight._distance;
-          weight._time = edge._weight._distance + actualWeight._time;
+          weight._time = edge._weight._time + actualWeight._time;
           Enqueue(candidates, { _from : actualCity, _to : edge._destination._label , _weight : weight })
         }
     });  
