@@ -49,7 +49,7 @@ function pesquisar() {
                     $rota[0].innerHTML += (`<h5> <b>${count++}. <b> ${cidades[i]}</h5>`);
                 }
 
-                $rota[0].innerHTML += 'O tempo estimado e a distância são de:';
+                $rota[0].innerHTML += 'O tempo e a distância aproximados são de:';
                 $rota[0].innerHTML += (`<h5> <b>${tempo} min <br> <b> ${distancia} km.</h5>`);
             }
         });
