@@ -19,19 +19,23 @@ Nesse projeto a dupla busca criar uma aplicação utilizando os métodos de melh
 
 - Página inicial   
 <br>
+
 ![Home](./assets/img/home.png)
 
 - Tela de Busca   
 <br>
+
 ![lista de cidades](./assets/img/busca.png)
 <br>
 
 - Aviso de campos vazios   
 <br>
+
 ![Pesquisa](./assets/img/tratamentoerros.png)
 
 - Esquema do grafo   
 <br>
+
 ![Pesquisa](./assets/img/grafo.png)
 
 
