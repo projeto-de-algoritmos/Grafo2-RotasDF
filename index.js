@@ -3,6 +3,7 @@ const cities = require('./data/cities');
 const routes = require('./data/citiesRoutes');
 const cors = require('cors');
 const express = require('express');
+const dijkstra = require('./search/dijkstra');
 
 const app = express();
 

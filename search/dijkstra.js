@@ -16,41 +16,83 @@ function Dequeue(queue) {
   return queue.shift(); 
 }
 
-function setDistance(distances, city, distance) {
-  distances.map((x)=>{
-    if(x.city === city){
-      x.distance = distance;
+Array.prototype.setDistance = function (edge) {
+  this.map((x)=>{
+    if(x._to === edge._to && x._weight._distance < 0 ){
+      x._weight = edge._weight;
+      x._from += edge._from;
     }
   });
 }
 
-// BFS(graph, 'Taguatinga');
 function dijkstra(graph, start, end) {
-  // let treeGraph = new Graph;
   let distances = [];
   cities.forEach(city => {
-    // treeGraph.addNode(city[0], city[1], city[2]);
-    distances.push({ city : city[0], distance : -1 });
+    distances.push({_from : '', _to : city[0], _weight : {_distance : -1, _time : -1} });
   });
-  let visitedCities = [start];
-  setDistance(distances, start, 0);
-  let citiesQueue = [start]
+  let visitedCities = [];
+
+  let actualWeight =  { _distance : 0, _time : 0 };
   let candidates = [];
+  let actualCity = start;
 
-  let actualCity = citiesQueue.pop();
-  let actualNode = graph._nodes.filter((x) => x._label === actualCity)[0]
-  
+  distances.setDistance({ _from : start, _to : start , _weight : actualWeight });
 
-  actualNode._edges.forEach(edge => {
-    Enqueue(candidates, { from : actualCity, to : edge._destination._label , weight : edge._weight })
-  });
+  let count = 0;
+  while(actualCity !== end) {
 
-  
+  // for(let count = 0; count < 9;){
+
+    visitedCities.push(actualCity);
+    let actualNode = graph._nodes.filter((x) => x._label === actualCity)[0]
+    
+
+    actualNode._edges.forEach(edge => {
+      if(!visitedCities.find((element) => element === edge._destination._label))
+        {
+          let weight = {};
+          weight._distance = edge._weight._distance + actualWeight._distance;
+          weight._time = edge._weight._distance + actualWeight._time;
+          Enqueue(candidates, { _from : actualCity, _to : edge._destination._label , _weight : weight })
+        }
+    });  
 
 
-  console.log(candidates);
+    let short = Number.MAX_VALUE;
+    let position = 0;
+    for (let i = 0; i < candidates.length; i++) {
+      let edge = candidates[i];
+      if(edge._weight._distance < short)
+      {
+        if(visitedCities.find((element) => element === edge._to))
+        {
+          [candidates[0], candidates[i]] = [candidates[i], candidates[0]];
+          candidates.shift();
+      
+        }else{
+          short = edge._weight._distance;
+          position = i;
+        }
+      }
+    }
 
-  return;
+    [candidates[0], candidates[position]] = [candidates[position], candidates[0]];
+    const candidate = candidates.shift();
+    
+    distances.setDistance(candidate);
+    actualCity = candidate._to;
+
+
+    
+    console.log("loop " + count++);
+    console.log(distances);
+    console.log(actualWeight);
+    actualWeight = candidate._weight;
+
+
+  }
+
+  return distances;
 
 };
 
