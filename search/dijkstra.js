@@ -4,8 +4,6 @@
 // pi(v) = min(){e = (u, v): u pertence S} d(u) + c_e
 // add v to S, and set d(v) = pi(v)
 
-const Graph = require("../classes/graph");
-const routes = require("../data/citiesRoutes");
 const cities = require('../data/cities');
 
 
@@ -16,11 +14,36 @@ function Dequeue(queue) {
   return queue.shift(); 
 }
 
+function pathFinder(distances, start, end) {
+  let next = end;
+  let path = []
+  distances.forEach((x) => {
+    if(x._to === next) {
+      path.unshift({ city : x._to, weight : x._weight });
+      next = x._from;
+      return;
+    }
+  });
+  let actual = end;
+  while (actual !== start) {
+    actual = next;
+    distances.forEach((x) => {
+      if(x._to === actual) {
+        path.unshift({ city : x._to, weight : x._weight });
+        next = x._from;
+        return;
+      }
+    })
+  }
+
+  return path;
+}
+
 Array.prototype.setDistance = function (edge) {
   this.map((x)=>{
     if(x._to === edge._to && x._weight._distance < 0 ){
       x._weight = edge._weight;
-      x._from += edge._from;
+      x._from = edge._from;
     }
   });
 }
@@ -67,7 +90,7 @@ function dijkstra(graph, start, end) {
         if(visitedCities.find((element) => element === edge._to))
         {
           [candidates[0], candidates[i]] = [candidates[i], candidates[0]];
-          candidates.shift();
+          Dequeue(candidates);
       
         }else{
           short = edge._weight._distance;
@@ -77,22 +100,18 @@ function dijkstra(graph, start, end) {
     }
 
     [candidates[0], candidates[position]] = [candidates[position], candidates[0]];
-    const candidate = candidates.shift();
+    const candidate = Dequeue(candidates);
     
     distances.setDistance(candidate);
-    actualCity = candidate._to;
-
-
-    
-    console.log("loop " + count++);
-    console.log(distances);
-    console.log(actualWeight);
+    actualCity = candidate._to;    
     actualWeight = candidate._weight;
 
 
   }
 
-  return distances;
+  let path = pathFinder(distances, start, end)
+
+  return path;
 
 };
 

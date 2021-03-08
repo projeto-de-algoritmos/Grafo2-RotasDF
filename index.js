@@ -30,7 +30,9 @@ app.use((req, res, next) =>{
             graph.addEdge(route[0], route[1], route[2]);
         });
 
-        dijkstra(graph, 'Taguatinga', 'Sobradinho');
+        const path = dijkstra(graph, 'Taguatinga', 'Sobradinho');
+        console.log(path);
+        
         return;
 
 //         return res.json({caminho : answer});
