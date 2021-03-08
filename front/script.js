@@ -27,8 +27,8 @@ function pesquisar() {
         var $destino = $('#destino');
         var $rota = $('#rotaPesquisada');
 
-        $rota[0].innerHTML = 'A rota selecionada passa pelas seguintes cidades respectivamente: ';
-        console.log($rota);
+        $rota[0].innerHTML = 'Sua rota passa pelas seguintes cidades respectivamente: ';
+        //console.log($rota);
         let data = {	
             origem : $origem[0].value, 
             destino : $destino[0].value
@@ -43,14 +43,15 @@ function pesquisar() {
                 let cidades = res.path;
                 let distancia = res.distance;
                 let tempo = res.time;
-                console.log(res);
+                //console.log(res);
                 let count = 1;
                 for(let i = 0; i < cidades.length; i++){
                     $rota[0].innerHTML += (`<h5> <b>${count++}. <b> ${cidades[i]}</h5>`);
                 }
 
+                $rota[0].innerHTML += 'O tempo estimado e a distância são de:';
+                $rota[0].innerHTML += (`<h5> <b>${tempo} min <br> <b> ${distancia} km.</h5>`);
             }
         });
     }
 }
-
