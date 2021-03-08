@@ -40,10 +40,12 @@ function pesquisar() {
             data: JSON.stringify(data),
             contentType: "application/json",
             success: (res)=>{
-                let cidades = res.caminho;
-                console.log(cidades[cidades.length-1]);
+                let cidades = res.path;
+                let distancia = res.distance;
+                let tempo = res.time;
+                console.log(res);
                 let count = 1;
-                for(let i = cidades.length-1; i >= 0; i--){
+                for(let i = 0; i < cidades.length; i++){
                     $rota[0].innerHTML += (`<h5> <b>${count++}. <b> ${cidades[i]}</h5>`);
                 }
 

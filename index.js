@@ -32,16 +32,15 @@ app.post('/', (req, res) => {
 
         const path = dijkstra(graph, origem, destino);
         console.log(path);
-        let answer = {};
-        answer.path = [];
-        answer.distance = path[path.length-1].weight._distance;
-        answer.time = path[path.length-1].weight._time;
+        answerPath = [];
+        answerDistance = path[path.length-1].weight._distance;
+        answerTime = path[path.length-1].weight._time;
         path.forEach((x) => {
-            answer.path.push(x.city);
+            answerPath.push(x.city);
         });
 
 
-        return res.json({caminho : answer});
+        return res.json({ path : answerPath, distance : answerDistance, time : answerTime });
     
     } else {
         console.log("deu ruim");
