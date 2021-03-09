@@ -68,7 +68,7 @@ $ node .
 ## Uso 
 Selecione uma cidade no primeiro bloco, uma cidade no segundo bloco e clique em pesquisar. O resultado vai a rota com o menor custo da origem até o destino.
 
-[Vídeo de explicação e uso do projeto.](https://github.com/projeto-de-algoritmos/Grafos2-RotasDF/tree/master/video)
+[Vídeo de explicação e uso do projeto.](https://youtu.be/gzQbET5a_XU)
 
 ## Outros 
 
